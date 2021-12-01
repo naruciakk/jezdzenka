@@ -27,3 +27,6 @@ optional arguments:
                         export the data instead of showing it
   -v, --verbose         get a little bit more information sometimes
 ```
+
+## License
+This work is dual-licensed under **0BSD** and **CC0 Universal**. You can choose between one of them if you use this work.
