@@ -1,6 +1,7 @@
 from datetime import datetime
 
 import InquirerPy
+from prompt_toolkit.validation import Validator
 
 from jezdzenka.classes.Type import Type
 from jezdzenka.translation import _
@@ -47,7 +48,7 @@ def new_empty_prompt(elements):
     return InquirerPy.prompt(questions)
 
 
-class DateTimeValidator(InquirerPy.Validator):
+class DateTimeValidator(Validator):
     def validate(self, document):
         try:
             datetime.strptime(document.text, "%Y-%m-%d %H:%M:%S")
