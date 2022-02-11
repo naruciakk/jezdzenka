@@ -1,6 +1,6 @@
 from datetime import datetime
 
-import PyInquirer
+import InquirerPy
 
 from jezdzenka.classes.Type import Type
 from jezdzenka.translation import _
@@ -39,21 +39,21 @@ def type_prompt():
     questions = [
         type_prompt_question
     ]
-    return PyInquirer.prompt(questions)
+    return InquirerPy.prompt(questions)
 
 
 def new_empty_prompt(elements):
     questions = generate_form(elements)
-    return PyInquirer.prompt(questions)
+    return InquirerPy.prompt(questions)
 
 
-class DateTimeValidator(PyInquirer.Validator):
+class DateTimeValidator(InquirerPy.Validator):
     def validate(self, document):
         try:
             datetime.strptime(document.text, "%Y-%m-%d %H:%M:%S")
             return True
         except ValueError:
-            raise PyInquirer.ValidationError(
+            raise InquirerPy.ValidationError(
                 message=_('datetime.validator.error'),
                 cursor_position=len(document.text),
             )

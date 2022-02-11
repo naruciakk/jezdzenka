@@ -2,7 +2,7 @@ from setuptools import setup
 
 setup(
     name='jezdzenka',
-    version='1.54571',
+    version='1.545718',
     packages=['jezdzenka', 'jezdzenka.classes', 'jezdzenka.console', 'jezdzenka.database', ],
     package_data={"": ["*.mo", "*.po"]},
     url='https://naruciakk.eu/okucha/jezdzenka',
@@ -14,7 +14,7 @@ setup(
         ]
     },
     install_requires=[
-        'rich', 'PyInquirer', 'tinydb', 'tinydb_serialization', 'python-magic', 'mo_installer',
+        'rich', 'InquirerPy', 'tinydb', 'tinydb_serialization', 'python-magic', 'mo_installer',
     ],
     locale_src="locale",
     description='Handy wallet in your terminal, no strings attached.'
