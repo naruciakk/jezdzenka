@@ -1,7 +1,7 @@
 from datetime import datetime
 
 import InquirerPy
-from prompt_toolkit.validation import Validator
+from prompt_toolkit.validation import Validator, ValidationError
 
 from jezdzenka.classes.Type import Type
 from jezdzenka.translation import _
@@ -21,7 +21,7 @@ def generate_form(elements):
     for key, element in elements.items():
         if isinstance(element, datetime):
             questions.append({'type': 'input', 'name': key, 'default': element.strftime("%Y-%m-%d %H:%M:%S"),
-                              'validate': DateTimeValidator, 'filter': lambda val: datetime.fromisoformat(val),
+                              'validate': DateTimeValidator(), 'filter': lambda val: datetime.fromisoformat(val),
                               'message': _('new_prompt.' + key + '.message')})
         elif isinstance(element, list):
             strg = ""
@@ -54,7 +54,7 @@ class DateTimeValidator(Validator):
             datetime.strptime(document.text, "%Y-%m-%d %H:%M:%S")
             return True
         except ValueError:
-            raise InquirerPy.ValidationError(
+            raise ValidationError(
                 message=_('datetime.validator.error'),
                 cursor_position=len(document.text),
             )

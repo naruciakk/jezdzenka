@@ -2,7 +2,7 @@ from setuptools import setup
 
 setup(
     name='jezdzenka',
-    version='1.5457181',
+    version='1.54571817',
     packages=['jezdzenka', 'jezdzenka.classes', 'jezdzenka.console', 'jezdzenka.database', ],
     package_data={"": ["*.mo", "*.po"]},
     url='https://naruciakk.eu/okucha/jezdzenka',
