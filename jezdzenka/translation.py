@@ -9,7 +9,7 @@ def handling(exctype, value, tb):
 
 sys.excepthook = handling
 
-lang_dir = os.path.dirname(os.path.realpath(__file__)) + "/locale"
+lang_dir = os.path.dirname(os.path.realpath(__file__)) + "/../locale"
 lang = gettext.translation('base', localedir=lang_dir, languages=['en_US'])
 lang.install()
 _ = lang.gettext

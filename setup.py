@@ -14,7 +14,7 @@ setup(
         ]
     },
     install_requires=[
-        'rich', 'InquirerPy', 'tinydb', 'tinydb_serialization', 'python-magic', 'mo_installer',
+        'InquirerPy', 'tinydb', 'tinydb_serialization', 'python-magic', 'mo_installer', 'rich',
     ],
     locale_src="locale",
     description='Handy wallet in your terminal, no strings attached.'
